@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "outDir": "lib",
+    "rootDir": "src",
+    "lib": ["dom", "es2015", "es2017.object", "esnext.asynciterable"],
+    "baseUrl": ".",
+    "paths": {
+      "keycloak-js": ["src/keycloak-types.d.ts"]
+    }
+  },
+  "references": []
+}

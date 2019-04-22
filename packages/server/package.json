@@ -1,0 +1,12 @@
+{
+  "name": "@keycloak-example/server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.16.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

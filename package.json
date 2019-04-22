@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "parcel": "^1.12.3",
+    "tsc-watch": "^2.1.2",
+    "typescript": "^3.4.4"
+  },
+  "resolutions": {
+    "graphql": "14.2.1",
+    "@types/graphql": "14.2.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "tslint",
+    "*.{ts,tsx,js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5",
+    "arrowParens": "always"
+  },
+  "scripts": {
+    "start-client": "parcel packages/client/src/index.html",
+    "start-server": "cd packages/server && tsc && tsc-watch --preserveWatchOutput --onSuccess \"node -r dotenv/config ./lib/server.js\" --onFailure \"echo Beep! Compilation Failed\"",
+    "build": "tsc -b packages"
+  }
+}

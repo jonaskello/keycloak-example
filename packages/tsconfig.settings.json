@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    // From the lern-a
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    // "strict": true,
+    "composite": true,
+    "esModuleInterop": true,
+    //
+    "jsx": "react",
+    "newLine": "LF",
+    "noEmitOnError": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "keyofStringsOnly": true
+  }
+}
