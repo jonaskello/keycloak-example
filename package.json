@@ -4,9 +4,14 @@
     "packages/*"
   ],
   "devDependencies": {
-    "parcel": "^1.12.3",
+    "html-webpack-plugin": "^3.2.0",
+    "npm-run-all": "^4.1.5",
     "tsc-watch": "^2.1.2",
-    "typescript": "^3.4.4"
+    "typescript": "^3.4.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-html-plugin": "^0.1.1"
   },
   "resolutions": {
     "graphql": "14.2.1",
@@ -25,8 +30,10 @@
     "arrowParens": "always"
   },
   "scripts": {
-    "start-client": "parcel packages/client/src/index.html",
-    "start-server": "cd packages/server && tsc && tsc-watch --preserveWatchOutput --onSuccess \"node -r dotenv/config ./lib/server.js\" --onFailure \"echo Beep! Compilation Failed\"",
-    "build": "tsc -b packages"
+    "start": "run-p -l tsc-watch client",
+    "client": "webpack-dev-server -w",
+    "tsc-watch": "tsc -b packages && tsc-watch -b packages --preserveWatchOutput --onSuccess \"node -r dotenv/config packages/server/lib/server.js\" --onFailure \"echo >>> Compilation Failed\"",
+    "build": "tsc -b packages",
+    "clean-node-modules": "rm -rf node_modules && rm -rf packages/*/node_modules"
   }
 }
