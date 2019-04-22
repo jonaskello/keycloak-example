@@ -15,4 +15,18 @@ module.exports = {
       template: "./packages/client/index.html",
     }),
   ],
+  watchOptions: {
+    aggregateTimeout: 300,
+  },
+  devServer: {
+    // host: "localhost",
+    port: 3000,
+    // historyApiFallback: true,
+    proxy: {
+      "/api": { target: "http://localhost:3001", secure: false },
+    },
+    // contentBase: path.resolve(__dirname, "./assets"),
+    // overlay: true,
+    // stats: "errors-only",
+  },
 };
