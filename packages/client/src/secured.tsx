@@ -17,11 +17,11 @@ class Secured extends Component<Props, State> {
     const keycloak = Keycloak<Keycloak.KeycloakPromiseType>({
       realm: "MyDemo",
       url: "http://localhost:8080/auth",
-      clientId: "my-react-client"
+      clientId: "my-react-client",
     });
     const authenticated = await keycloak.init({
       onLoad: "login-required",
-      promiseType: "native"
+      promiseType: "native",
     });
     const userProfile = await keycloak.loadUserProfile();
     console.log("userProfile", userProfile);
@@ -36,13 +36,10 @@ class Secured extends Component<Props, State> {
           <div>
             {}
             <p>
-              This is a Keycloak-secured component of your application. You
-              shouldn't be able to see this unless you've authenticated with
-              Keycloak.
+              This is a Keycloak-secured component of your application. You shouldn't be able to see this unless you've
+              authenticated with Keycloak.
             </p>
-            <button onClick={() => this.state.keycloak!.logout()}>
-              Logout
-            </button>
+            <button onClick={() => this.state.keycloak!.logout()}>Logout</button>
           </div>
         );
       else return <div>Unable to authenticate!</div>;

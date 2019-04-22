@@ -30,9 +30,9 @@
     "arrowParens": "always"
   },
   "scripts": {
-    "start": "run-p -l tsc-watch client",
-    "client": "webpack-dev-server -w",
-    "tsc-watch": "tsc -b packages && tsc-watch -b packages --preserveWatchOutput --onSuccess \"node -r dotenv/config packages/server/lib/server.js\" --onFailure \"echo >>> Compilation Failed\"",
+    "start": "run-p -l w c",
+    "c": "webpack-dev-server -w",
+    "w": "tsc -b packages && tsc-watch -b packages --preserveWatchOutput --onSuccess \"node -r dotenv/config packages/server/lib/server.js\" --onFailure \"echo >>> Compilation Failed\"",
     "build": "tsc -b packages",
     "clean-node-modules": "rm -rf node_modules && rm -rf packages/*/node_modules"
   }
